@@ -1,16 +1,21 @@
 #!/usr/bin/python3
 
-# David Cox 2016
+
 from fractions import gcd
 from sys import argv
 
+
 def pollards_rho(n):
-    x = 2; y = 2; d = 1
+    x = 2
+    y = 2
+    d = 1
     f = lambda x: (x**2 + 1) % n
     while d == 1:
-        x = f(x); y = f(f(y))
-        d = gcd(abs(x-y), n)
-    if d != n: return d
+        x = f(x)
+        y = f(f(y))
+        d = gcd(abs(x - y), n)
+    if d != n:
+        return d
 
 
 def read_file():
@@ -21,7 +26,15 @@ def read_file():
                 print("{:d}={}*{}".format(num, num // 2, 2))
             else:
                 p = pollards_rho(num)
-                print("{}={}*{}".format(num, int(num/p), p))
+                f1 = p
+                f2 = int(num / p)
+                if f1 > f2:
+                    f11 = f2
+                    f22 = f2
+                else:
+                    f11 = f2
+                    f22 = f1
+                print("{}={}*{}".format(num, f1, f2))
 
 
 if __name__ == "__main__":
