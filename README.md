@@ -13,6 +13,6 @@ n = p × q. The problem is to find these two primes, given only n.
 
 This task is the same as task 0, except:
 
-p and q are always prime numbers 
+p and q are always prime numbers.
 The task is automatically killed in 5 seconds.
 
