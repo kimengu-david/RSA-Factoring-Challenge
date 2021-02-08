@@ -28,12 +28,6 @@ def read_file():
                 p = pollards_rho(num)
                 f1 = p
                 f2 = int(num / p)
-                if f1 > f2:
-                    f11 = f1
-                    f22 = f2
-                else:
-                    f11 = f2
-                    f22 = f1
                 print("{}={}*{}".format(num, f1, f2))
 
 
